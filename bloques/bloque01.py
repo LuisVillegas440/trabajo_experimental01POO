@@ -3,7 +3,6 @@ from utils import ValidationMixin, pedir_formulario
 class BloqueUno(ValidationMixin):
     
     def ejercicio01(self):
-        print("Identifica 5 nombre de clases.")
         campos = []
         for contador in range(5):
             campos.append({
@@ -13,7 +12,7 @@ class BloqueUno(ValidationMixin):
                 "campo": f"nombre de la clase {contador + 1}"
             })
 
-        datos = pedir_formulario("CLASES DE BIBLIOTECA", campos)
+        datos = pedir_formulario("Identifica 5 nombre de clases.", campos)
         nombres = [datos[f"clase_{contador}"] for contador in range(5)]
         print(nombres)
 

@@ -23,6 +23,17 @@ class ValidationMixin:
         return valor_int
     
     @staticmethod
+    def validar_numero(valor, nombre_del_campo):
+        try:
+            numero = int(valor)
+            if numero < 0:
+                raise ValueError(f"Por favor, ingrese un número entero positivo para {nombre_del_campo}.")
+        except ValueError:
+            raise ValueError(f"Por favor, ingrese un número entero válido para {nombre_del_campo}.")
+
+        return numero
+    
+    @staticmethod
     def validar_numero_float(valor, nombre_del_campo):
         try:
             valor_float = float(valor)

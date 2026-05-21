@@ -5,7 +5,7 @@ class BloqueSeis(ValidationMixin):
         print("===Programa que determine si un número ingresado es par o impar.===")
 
         datos = pedir_formulario("NUMERO PAR O IMPAR", [
-            {"nombre": "numero", "etiqueta": "Numero", "validacion": self.validar_numero_entero, "campo": "numero"}
+            {"nombre": "numero", "etiqueta": "Numero", "validacion": self.validar_numero, "campo": "numero"}
         ])
         numero = datos["numero"]
 
@@ -16,7 +16,7 @@ class BloqueSeis(ValidationMixin):
 
     def ejercicio02(self):
         print("===Asigna calificación letra (A,B,C,D) según nota numérica.===")
-        datos = pedir_formulario("CALIFICACION", [
+        datos = pedir_formulario("CALIFICACION Del 1 al 100\n", [
             {"nombre": "nota", "etiqueta": "Nota numerica", "validacion": self.validar_numero_entero, "campo": "nota"}
         ])
         nota = datos["nota"]

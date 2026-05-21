@@ -5,13 +5,17 @@ import json
 class BloqueDieciocho(ValidationMixin, ExportarMixin):
     def ejercicio01(self):
         notas = []
-        datos_estudiante = pedir_formulario("DATOS DEL ESTUDIANTE", [
-            {"nombre": "nombre", "etiqueta": "Nombre", "validacion": self.validar_campo, "campo": "nombre"},
+        datos_estudiante = pedir_formulario("DATOS DEL ESTUDIANTE | Maximo cantidad de notas 10", [
+            {"nombre": "nombre", "etiqueta": "Nombre", "validacion": self.validar_str, "campo": "nombre"},
             {"nombre": "cantidad_notas", "etiqueta": "Cantidad de notas", "validacion": self.validar_numero_entero, "campo": "cantidad de nota"}
         ])
+        cantidad_notas = datos_estudiante["cantidad_notas"]
+        if cantidad_notas > 10:
+            print("El maximo de cantidad de nota es 10")
+            return 
 
         nombre = datos_estudiante["nombre"]
-        cantidad_notas = datos_estudiante["cantidad_notas"]
+        
         campos_notas = []
 
         for i in range(cantidad_notas):
@@ -35,7 +39,7 @@ class BloqueDieciocho(ValidationMixin, ExportarMixin):
 
     def ejercicio02(self):
         datos_usuario = pedir_formulario("DATOS DEL USUARIO", [
-            {"nombre": "nombre", "etiqueta": "Nombre", "validacion": self.validar_campo, "campo": "nombre"},
+            {"nombre": "nombre", "etiqueta": "Nombre", "validacion": self.validar_str, "campo": "nombre"},
             {"nombre": "correo", "etiqueta": "Correo", "validacion": self.validar_correo, "campo": "correo"},
             {"nombre": "edad", "etiqueta": "Edad", "validacion": self.validar_mayor_edad, "campo": "edad"}
         ])

@@ -30,7 +30,7 @@ class BloqueTrece(ValidationMixin):
             numerador = datos["numerador"]
             denominador = datos["denominador"]
             resultado = numerador / denominador
-            print(f"El resultado de {numerador} / {denominador} es: {resultado}")
+            print(f"El resultado de {numerador} / {denominador} es: {round(resultado, 3)}")
         except ValueError:
             print("Error: No has introducido un número válido. Por favor, intenta de nuevo.")
         except ZeroDivisionError:

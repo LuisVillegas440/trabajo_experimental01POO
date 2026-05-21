@@ -10,7 +10,7 @@ class BloqueCinco(ValidationMixin):
                 self.edad = edad
 
         datos = pedir_formulario("DATOS DE PERSONA", [
-            {"nombre": "nombre", "etiqueta": "Nombre", "validacion": self.validar_campo, "campo": "nombre"},
+            {"nombre": "nombre", "etiqueta": "Nombre", "validacion": self.validar_str, "campo": "nombre"},
             {"nombre": "edad", "etiqueta": "Edad", "validacion": self.validar_numero_entero, "campo": "edad"}
         ])
 
